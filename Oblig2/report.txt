@@ -1,0 +1,31 @@
+1. What is the time complexity of your solution? You must explain
+the stated complexity. If you have a different complexity for each problem
+you need to discuss them separately.
+
+Jeg mener at kompleksiteten til løsninger er O(|V| + |E|), dette er hvis man ser
+bort i fra opprettelsen av filen. Konstruktøren går gjennom alle linjene i inputfilen
+(alle oppgavene/tasks i prosjektet) og sette alle kanter.
+isRealizable / hasCycle har kompleksiteten O(V+E) fordi den bruker DFS(denne kan være
+raskere hvis den finner en løkke). findESEF og findLSLF bruker DFS som gir O(|V| + |E|).
+
+Flere steder i løsningen bruker jeg ArrayList, og bruker funksjonene add og get.
+Disse funksjonene er i konstant tid O(1). Dette vil ikke påvirke kompleksiteten
+da de andre er tregere.
+
+createFile() er O(nlogn). I den første delen (der den printer ut oppgavene/tasks i rekkefølge
+om info) har den kompleksiteten O(|V| + |E| + |E|). Når den går i gjennom alle
+oppgavene/tasksene og deres in-og outedges.
+I den andre delen bruker den kompleksiteten O(nlogn) for å sette in Actions og
+O(1) for å hente ut. O(nlogn) er den tregeste og derfor får createFile den
+kompleksiteten.
+
+2. What requirements are there for the input graph in order for the project to be
+successfully planned? Please put discussion in the light of graph theoretical
+properties.
+
+-Rettet graf (svakt sammenhengende)
+-At det ikke er oppgaver som er avhengige av hverandre, slik at det blir en løkke.
+
+3. What kind of the graph algorithms did you use in your implementation?
+
+Jeg brukte DFS/traversering. 
